@@ -1,128 +1,91 @@
-#advanced-searchform input.searcher {
-    display: block;
-    max-width: 400px;
-}
-div#advanced-searchform-searchbar input {
-    display: inline-block;
-    float: left;
-    line-height: 15px;
-}
-div#advanced-searchform-searchbar input {
-    display: inline-block;
-    float: left;
-}
-.header-footer-group pre, .header-footer-group fieldset, .header-footer-group input, .header-footer-group textarea, .header-footer-group table, .header-footer-group table *, .footer-nav-widgets-wrapper, #site-footer, .menu-modal nav *, .footer-widgets-outer-wrapper, .footer-top {
-    border-color: #dcd7ca;
-}
-input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"], textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: #fff;
-    border-radius: 0;
-    border-style: solid;
-    border-width: 0.1rem;
-    box-shadow: none;
-    display: block;
-    font-size: 1.6rem;
-    letter-spacing: -0.015em;
-    margin: 0;
-    max-width: 100%;
-    padding: 1.5rem 1.8rem;
-    width: 100%;
-}
-pre, fieldset, input, textarea, table, table *, hr {
-    border-color: #dcd7ca;
-}
-input, textarea {
-    border-color: #dcd7ca;
-    color: #000;
-}
-input, textarea, button, .button, .faux-button, .faux-button.more-link, .wp-block-button__link, .wp-block-file__button {
-    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-}
-input, textarea, button, .button, .faux-button, .wp-block-button__link, .wp-block-file__button {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-    line-height: 1;
-}
-*, *::before, *::after {
-    box-sizing: inherit;
-    -webkit-font-smoothing: antialiased;
-    word-break: break-word;
-    word-wrap: break-word;
-}
-user agent stylesheet
-input[type="text" i] {
-    padding: 1px 2px;
-}
-user agent stylesheet
-input {
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: -internal-light-dark(black, white);
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    appearance: textfield;
-    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    margin: 0em;
-    font: 400 13.3333px Arial;
-    padding: 1px 2px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(195, 195, 195));
-    border-image: initial;
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../font/icomoon.eot?l0wbjw');
+  src:  url('../font/icomoon.eot?l0wbjw#iefix') format('embedded-opentype'),
+    url('../font/icomoon.ttf?l0wbjw') format('truetype'),
+    url('../font/icomoon.woff?l0wbjw') format('woff'),
+    url('../font/icomoon.svg?l0wbjw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-
-	.radios-group input, .radios-group label{
-		display: inline-block
-	}
-	.radios-group input{
-		margin-left: 18px
-	}
-
-	#advanced-searchform input.searcher {
-    display: block;
-    max-width: 400px;
-}
-div#advanced-searchform-searchbar input {
-    display: inline-block;
-    float: left;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.radios-group {
-    display: block;
-    margin: auto;
-    clear: both;
-    text-align: left;
-    padding: 24px 0;
+.icon-search:before {
+  content: "\e986";
 }
-
-select#inlineFormCustomSelect {
-    text-align: left;
-    display: block;
-    padding: 12px
-	}
-
-	div#advanced-searchform-searchbar input {
-    display: inline-block;
-    float: left;
-    line-height: 15px;
-}
-
 .submit-btn{
+  /**
 	 background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlpJREFUeNq0l89LVFEUx+cNpBOjzGZymEBIyREpkmjIKaikjVDQQswKV/4LEUGbhFaFELPVTYtAZhMtigiKSMVANBiQNuoYzqQR+BslLeH5PXCEw/X9und8Bz7w7tx3znznnnPvPWPZth1xsbPgLrgJzoAY2AJz4DN4C5Yi1RoJUEiCl2DF9rZfYADEHWIERv0gB+ZsPZsGraYCLJGCHPgIEmKBJsEbUAQ7IAmyoAe0ifcqnKp50xSkQFn8qk3QDywX5SfBE7AvfKZAzDQFQyLQBrgaMMA9RcRjEwHnwI4I0qcZZED4/gYJXQGDIsC4QSFROhZEjB4d/ygXz6GNGOzkv6Agxp06ziSgUYyLhsfJd/HcrCugVoy3DAX8E891ugJ2xbjeUMAJJSVaAspifMFQwEXxvKgrYFSM7xt8eY3iN6F7EraDXbGNujW34SPhuw4aTE7CVyLIKugIGOAO2BO+z0yP4jRYFoHWwAMPxxrwUPlyup5rq7kNr4MPIC4yNMaNxwxYB6f4Nux1KFjaii/AU50SsJSO6AZ4rRxOfvYHpMT4G9gA0yDPwrU6otNgGGz7NCJUcM+56PIu7xRBc9AUOPWEt8E1XhHabnvcfHwF75QzhNJ03iFOCdwCs0FXwJRPHqtFt2XG7TY8LpvymGvidi8T5gpQ7VR86ubIShynACIboJ0vgZawBBBX+DT1Mmr9m8ISEOGm1m8lflDavLZhtZbjrZr0eKcQpgCyyyyiwWV+M2wBZJdYRNph7n80Er5Rw9oFfjrMfQmrCJ2grfee//Zt88nZeCDAAMk91jbH/UCHAAAAAElFTkSuQmCC')  !important;
 	 background-repeat: no-repeat !important;
 	 background-position: 5px 11px !important;
 	 text-align: right !important;
-		padding-left: 41px !important;
-		padding-right: 16px !important;
+    padding:0px 16px 0 41px !important**/
+}
+.submit-btn.form-control { 
+  font-size: 19px !important;
+  font-family: Arial !important;
+  text-transform: CAPITALIZE !important;
+  color: #ffffff !important;
+  background-color: #138e6a !important;
+}
 
+.container{
+  background-color:#ffffff !important;
+
+}
+
+.row.radio-group input {
+    position: absolute !important;
+    top: 13px !important;
+    left:45px !important;
+}
+
+.row.radio-group label {
+  font-family: Arial !important;
+  font-size: 15px !important;
+  line-height: 46px !important;
+  margin-left: 17% !important;
+}
+.form-control {
+    height: 51px !important;
+    width: 100% !important
+}
+
+#inlineFormCustomSelect{
+    height: 51px !important;
+    width: 100% !important
+}
+
+.content.form{
+  max-width: 768px !important;
+}
+.content.search-result a {
+    text-decoration: none;
+}
+
+.content.search-result h2 {
+    padding-bottom: 0px;
+    margin-bottom: 7px;
+}
+
+.content.search-result .meta-post {
+    font-size: 15px;
+    font-style: italic;
+    margin-bottom: 6px;
 }
