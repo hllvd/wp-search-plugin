@@ -27,49 +27,57 @@ $args = array(
 $my_query = new WP_Query($args);
 
 ?>
-
 	<div  class="container">
-		<main  class="content">
+      <br/>
+		<main  class="content form">
+					<form method="get"  role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <div class="row">
+              <div class="col-md-6">
+  							<input type="text" class="searcher input-form form-control" value="<?=$text;?>" name="s" placeholder="<?php _e( 'Buscar Palavra-Chave', 'textdomain' ); ?>"   />
+  						</div>
+              <div class="col-md-3">
+                </span> <button  class="submit-btn form-control" value="Pesquisa" /><span class="icon-search"> Pesquisa</button>
+              </div>
+            </div>
 
-				<header class="archive-header has-text-align-center header-footer-group">
-					<div class="archive-header-inner section-inner medium">
-					<form method="get" id="advanced-searchform" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<div id="advanced-searchform-searchbar">
-							<input type="text" class="searcher" value="<?=$text;?>" name="s" placeholder="<?php _e( 'Buscar Palavra-Chave', 'textdomain' ); ?>"   />
-							<input type="submit" class="submit-btn" value="Pesquisa" />
-						</div>
-						<div class="radios-group">
-							Pesquisar por:
-							<input class="form-check-input" type="radio" name="searchphrase" id="searchphraseall" value="all" >
-							<label class="form-check-label" for="">Todas as Palavras</label>
-							<input class="form-check-input" type="radio" name="searchphrase" id="searchphraseany" value="any">
-							<label class="form-check-label" for="">Quaisquer palavras </label>
-							<input class="form-check-input" type="radio" name="searchphrase" id="searchphraseexact" value="exact">
-							<label class="form-check-label" for="">Frase exata</label>
-						</div>
-
-						<select class="" id="inlineFormCustomSelect" name="orderby">
-							<option value="relevance" <?=($orderby=="relevance")?"selected":"" ?>>Relevância</option>
-							<option value="date" <?=($orderby=="date" && $order == "desc" )?"selected":"" ?>> Recentes primeiro</option>
-							<option value="date_asc" <?=($orderby=="date" && $order == "asc" )?"selected":"" ?>> Antigos primeiro</option>
-							<option value="title" <?=($orderby=="title")?"selected":"" ?>>Ordem Alfabética</option>
-							<option value="category" <?=($orderby=="cat")?"selecacted":"" ?>>Categoria</option>
-						</select>
-
+            <div class="row radio-group">
+              <div class="col-md-4 ">
+                <input class="form-check-input" type="radio" name="searchphrase" id="searchphraseall" value="all" >
+                <label class="form-check-label" for="">Todas as Palavras</label>
+              </div>
+              <div class="col-md-4">
+                <input class="form-check-input" type="radio" name="searchphrase" id="searchphraseany" value="any">
+                <label class="form-check-label" for="">Quaisquer palavras </label>
+              </div>
+              <div class="col-md-4">
+                <input class="form-check-input" type="radio" name="searchphrase" id="searchphraseexact" value="exact">
+                <label class="form-check-label" for="">Frase exata</label>
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-6">
+                <select  id="inlineFormCustomSelect" name="orderby" class="form-cotrol" >
+                  <option value="relevance" <?=($orderby=="relevance")?"selected":"" ?>>Relevância</option>
+                  <option value="date" <?=($orderby=="date" && $order == "desc" )?"selected":"" ?>> Recentes primeiro</option>
+                  <option value="date_asc" <?=($orderby=="date" && $order == "asc" )?"selected":"" ?>> Antigos primeiro</option>
+                  <option value="title" <?=($orderby=="title")?"selected":"" ?>>Ordem Alfabética</option>
+                  <option value="category" <?=($orderby=="cat")?"selecacted":"" ?>>Categoria</option>
+                </select>
+              </div>
+            </div>
 					</form>
-				</div>
-
-			</header><!-- .archive-header -->
 		</main>
+<hr/>
 
-
-		<div class="content">
+		<div class="content search-result">
 			<?php
 							?>
 									<?php if ($my_query->have_posts()): ?>
 									<?php while($my_query -> have_posts()) : $my_query -> the_post(); ?>
 									<div class="post content ">
-										<h2><?=the_title()?></h2>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><h2><?=the_title()?></h2></a>
+                    <div class="meta-post"><?=the_tags()?> <?=the_author()?> </div>
+
 										<?=the_excerpt()?>
 										<p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Continue lendo </a></p>
 
