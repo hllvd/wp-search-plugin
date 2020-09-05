@@ -41,15 +41,15 @@ $my_query = new WP_Query($args);
             </div>
 
             <div class="row radio-group">
-              <div class="col-md-4 ">
+              <div class="col-md-3 ">
                 <input class="form-check-input" type="radio" name="searchphrase" id="searchphraseall" value="all" >
                 <label class="form-check-label" for="">Todas as Palavras</label>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <input class="form-check-input" type="radio" name="searchphrase" id="searchphraseany" value="any">
                 <label class="form-check-label" for="">Quaisquer palavras </label>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <input class="form-check-input" type="radio" name="searchphrase" id="searchphraseexact" value="exact">
                 <label class="form-check-label" for="">Frase exata</label>
                 </div>
