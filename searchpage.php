@@ -15,11 +15,6 @@ $search_by 			= 	(isset($_GET['search_by'])) ? filter_var( strip_tags($_GET['sea
 $orderby 				=		(isset($_GET['orderby'])) ? filter_var( strip_tags($_GET['orderby']), FILTER_SANITIZE_STRING)  : "";
 $order 					=		(isset($_GET['order']))?filter_var( strip_tags($_GET['order']), FILTER_SANITIZE_STRING):"";
 
-if($orderby == 'date_asc'){
-	$orderby = 'date';
-	$order = 'asc';
-}
-
 /**get all categories term**/
 $args_cat = [
     'orderby' => 'name',
@@ -78,12 +73,12 @@ $my_query = new WP_Query($args);
             <div class="row">
               <div class="col-md-6">
                	<input id="order" type="hidden" name="order" value="">
-               
+
 				<select class="" id="inlineFormCustomSelect" name="orderby" onchange="return func()">
                   <option value="relevance" <?=($orderby=="relevance")?"selected":"" ?>>Relevância</option>
                   <option value="date" <?=($orderby=="date" && $order == "desc" )?"selected":"" ?>> Recentes primeiro</option>
-                  <option value="date_asc" <?=($orderby=="date" && $order == "asc" )?"selected":"" ?>> Antigos primeiro</option>
-                  <option value="title" <?=($orderby=="title")?"selected":"" ?>>Ordem Alfabética</option>
+                  <option value="date" id="date_asc" <?=($orderby=="date" && $order == "asc" )?"selected":"" ?>> Antigos primeiro</option>
+                  <option value="title" <?=($orderby=="title" && $order == "asc" )?"selected":"" ?>>Ordem Alfabética</option>
                   <option value="cat" <?=($orderby=="cat")?"selected":"" ?>>Categoria</option>
                 </select>
               </div>
